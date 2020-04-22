@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Full installation of Ubuntu to USB drive"
+title: "Full installation of (encrypted) Ubuntu to USB drive"
 date: 2020-04-22 00:00:00 +0000
 ---
 
@@ -208,6 +208,9 @@ If the network is not working you can try `sudo netplan apply` to make sure the 
 If you are not asked for a password on startup when using encryption, verify that cryptsetup is installed on the USB-drive. Run `sudo update-initramfs -uv` and look for lines with hook and crypt in them to make sure that the tools for unlocking at boot time get included in initramfs. You can also try changing the *splash* in `/etc/default/grub` to *nosplash* (and do an update-grub) which I have found to sometimes fix this issue. This is an example line: `GRUB_CMDLINE_LINUX_DEFAULT=quiet nosplash`
 
 You may need to disable secure boot to boot the USB-drive on a machine. I tried installing the signed version of GRUB but for some reason my PC did not boot the USB with secure boot enabled.
+
+Credit to some additional sources I got some information from when I made this.
+Unfortunately I did not plan to make this a blog project from the start so I did not document them 100%.
 
 # Additional links and sources
 * https://blog.heckel.xyz/2017/05/28/creating-a-bios-gpt-and-uefi-gpt-grub-bootable-linux-system/
