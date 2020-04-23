@@ -67,7 +67,7 @@ I am unsure of the minimum size for the EFI system partition, using FAT16 may al
 
 Format the bios_grub partition as cleared in Gparted, this removes any old traces of a file system.
 
-![](/assets/gparted-usb-devinfo1.png)
+![]({{site.baseurl}}/assets/gparted-usb-devinfo1.png)
 
 Set the bios_grub flag on the bios-grub partition by right clicking the partition and selecting manage flags. On my version of Gparted this required applying all changes first. Also set the boot and ESP (*EFI system partition* I believe on the EFI partition).
 
@@ -79,7 +79,7 @@ If using encryption we need to unlock the encrypted partition before creating it
 ## Mounting file systems
 At this point we mount everything under `/mnt` the way we want it to be in the new system.
 
-![Image of USB-partitions](/assets/usb-mounted.png)
+![Image of USB-partitions]({{site.baseurl}}/assets/usb-mounted.png)
 
 *Output of `lsblk /dev/sdc` showing how everything is mounted. The columns of most interest here are NAME, SIZE and MOUNTPOINT.*
 
