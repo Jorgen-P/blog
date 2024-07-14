@@ -35,7 +35,7 @@ Generally <> signs are used in this guide to indicate that another value should 
   - Ideally a USB3 drive for speed (optional)
   - At least 16 GB in size for a comfortable experience but if you are careful about using storage 8 GB or possibly less works.
 1. Create partitions and file systems on USB-drive
-1. Install Ubuntu using deboostrap
+1. Install Ubuntu using debootstrap
 1. Chroot into the new Ubuntu system
   * Install necessary packages
   * Modify configuration files
@@ -86,7 +86,7 @@ At this point we mount everything under `/mnt` the way we want it to be in the n
 We must create directories to mount on. After mounting the root file system on `/mnt` (`mount /dev/<root-partition> /mnt` or `/dev/mapper/<name-of-unlocked-device> /mnt` if using encryption) we create the boot directory there for mounting the /boot file system if using one of those.
 
 ## Installation
-`sudo deboostrap --arch=amd64 --components=main,universe bionic /mnt`
+`sudo debootstrap --arch=amd64 --components=main,universe bionic /mnt`
 
 This will install the 64-bit (x86-64) version of Ubuntu Bionic (18.04) into /mnt and enable universe packages. If you only want to use the most well supported packages remove universe and use only main, there are additional repositories (multiverse, restricted) but you should understand their terms before enabling them. This step can take a little while, particularly if you have a lower speed internet connection or USB-drive.
 
